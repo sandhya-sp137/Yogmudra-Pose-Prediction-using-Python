@@ -441,15 +441,6 @@ RAM       : 8 GB
 Storage   : ~1 GB free space
 GPU       : Optional, useful for faster model training
 ```
-
----
-
-# 📜 License
-
-This project was developed as an academic/educational project.
-
-You may add your preferred open-source license here, such as MIT License, after confirming the licensing requirements of the datasets, models and APIs used.
-
 ---
 
 # 👩‍💻 Project Team
@@ -457,24 +448,6 @@ You may add your preferred open-source license here, such as MIT License, after 
 **B.Tech – Artificial Intelligence & Data Science**
 
 - Sandhya Subhash Potadar
-- Sanika Mahadev Pujari
-- Shraddha Mukund Botre
-- Neha Mahesh Suryavanshi
-
-**Project Guide:** Prof. V. M. Sale
-
-**Institution:** Fabtech Technical Campus, College of Engineering & Research, Sangola
-
-**University:** Dr. Babasaheb Ambedkar Technological University, Lonere
-
-**Academic Year:** 2024–2025
 
 ---
-
-## ⭐ If you find this project useful
-
-Give the repository a ⭐ on GitHub and feel free to explore the code.
-
-```text
-AI + Computer Vision + Yoga = Smart Yoga Assistant 🧘‍♀️🤖
-```
+---
