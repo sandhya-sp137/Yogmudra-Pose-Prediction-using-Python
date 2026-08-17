@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Yoga Mudra Pose Prediction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e6f4ea;
+    color: #2f4f4f;
+  }
+  .hero {
+    background: linear-gradient(to right, #81c784, #aed581);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 3px #4a7c59;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .pose-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .pose-card:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+  }
+  section.bg-light {
+    background-color: #f2fcf6 !important;
+  }
+  footer {
+    background: #d0f0dc;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #2f4f4f;
+  }
+  .btn-success {
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+  .btn-success:hover {
+    background-color: #43a047;
+    border-color: #43a047;
+  }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <h1>🧘 Yoga Mudra Pose Prediction 🧘</h1>
+    <p class="lead">Get personalized yoga mudra recommendations based on health conditions. <br>
+    Learn the benefits, pressure points, and steps for each pose — all in one place.</p>
+  </div>
+</section>
+
+
+<section class="container py-4 text-center">
+  <h2>🌿 Benefits of Practicing Yoga</h2>
+  <div class="row mt-4">
+    <div class="col-md-4 mb-4">
+      <h5>🧘 Reduces Stress & Anxiety</h5>
+      <p>Promotes relaxation by balancing the nervous system and calming the mind through mindful breathing and hand coordination.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <h5>🫁 Improves Breathing & Lung Health</h5>
+      <p>Activates pranic flow and clears energy blockages in the respiratory system, enhancing oxygen intake and breath control.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <h5>💪 Boosts Immunity</h5>
+      <p>Stimulates vital pressure points that energize internal organs and strengthen the body’s natural defense system.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <h5>🧠 Enhances Focus & Mental Clarity</h5>
+      <p>Improves concentration, awareness, and mindfulness — beneficial for students, professionals, and meditation practitioners.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <h5>🌱 Supports Digestion & Metabolism</h5>
+      <p>Helps in regulating appetite, reducing indigestion, and enhancing gut health through elemental balance.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+      <h5>💓 Balances Emotions</h5>
+      <p>Encourages inner harmony by calming excessive emotional swings and promoting a stable, peaceful state of mind.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="container py-5 bg-light">
+  <h2 class="text-center">🔍 Find Yoga Pose by Disease</h2>
+  <form method="POST" id="searchForm" class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+    <input type="text" name="disease" id="diseaseInput" class="form-control w-50" placeholder="Enter disease..." required>
+    <button type="submit" class="btn btn-success">Search</button>
+    <button type="button" class="btn btn-outline-secondary" onclick="startListening()">🎤</button>
+  </form>
+  <small class="text-muted d-block text-center mt-2">Use voice to search</small>
+</section>
+
+
+<section class="container py-2">
+  {% if search_result %}
+    {% if search_result.error %}
+      <p class="text-danger">{{ search_result.error }}</p>
+    {% else %}
+      <h3>Recommended Yoga Pose & Details for: <br>{{ search_result.disease }}</h3>
+      {% for pose in search_result.poses %}
+      <div class="card mb-4 shadow">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ url_for('static', filename=pose.image_path) }}" class="pose-image" style="height: 250px; object-fit: contain; padding: 20px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5>{{ pose.pose }}</h5>
+              <p><strong>Pressure Points:</strong> {{ pose.pressure_point }}</p>
+              <h6>Steps:</h6>
+              <ul>
+                {% for step in pose.steps %}
+                  <li>{{ step }}</li>
+                {% endfor %}
+              </ul>
+              {% if pose.video_url %}
+              <div class="col-md-3 d-flex align-items-center justify-content-center">
+                {% set video_id = pose.video_url.split('v=')[-1].split('&')[0] %}
+                <div style="max-width: 240px;">
+                  <a href="{{ pose.video_url }}" target="_blank" class="position-relative d-inline-block">
+                    <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg"
+                         alt="YouTube Video Thumbnail"
+                         class="img-fluid rounded" style="border: 2px solid #ccc;">
+                    <span style="position: absolute; top: 50%; left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 2.5rem; color: white; text-shadow: 2px 2px 4px #000;">
+                                ▶️
+                    </span>
+                  </a>
+                  <p class="text-center mt-1"><small>🔗 Watch on YouTube</small></p>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+</section>
+
+<script>
+  function speak(text) {
+    const synth = window.speechSynthesis;
+    const utterThis = new SpeechSynthesisUtterance(text);
+    utterThis.lang = 'en-US';
+    synth.speak(utterThis);
+  }
+    
+    {% if search_result and not search_result.error %}
+      let summary = "For {{ search_result.disease }}, the recommended yoga poses are: ";
+    {% for pose in search_result.poses %}
+      summary += "Pose: {{ pose.pose }}. ";
+      summary += "Pressure Point: {{ pose.pressure_point }}. ";
+      summary += "Steps are: ";
+      {% for step in pose.steps %}
+        summary += "{{ loop.index }}. {{ step }}. ";
+      {% endfor %}
+    {% endfor %}
+    speak(summary);
+    {% elif search_result and search_result.error %}
+    speak("No yoga poses found for this disease.");
+    {% endif %}
+</script>
+
+
+<section class="container py-3">
+  <h2>🕉️ What is Yoga Mudra?</h2>
+  <p>
+    Yoga Mudras are ancient hand and body gestures used in yogic practices to direct the flow of life energy (prana) within the body. Rooted in Ayurveda and Indian spirituality, these mudras are believed to balance the five elements — earth, water, fire, air, and space — which are associated with different parts of the body and mind.
+  </p>
+  <p>
+    By forming specific shapes with fingers or through body postures, mudras stimulate acupressure points, activate subtle energy pathways (nadis), and harmonize the mind-body connection. Regular practice of mudras can help manage chronic health conditions like stress, diabetes, hypertension, and respiratory issues.
+  </p>
+  <p>
+    Yoga Mudras are simple to perform, require no equipment, and can be practiced by anyone, anywhere — making them a powerful tool for holistic healing and self-transformation.
+  </p>
+</section>
+
+
+<section class="container py-2">
+  <h2>📚 Explore All Yoga Mudras</h2>
+  <p>
+    This gallery features a wide collection of therapeutic yoga mudras categorized by health conditions. <br>
+    Click on any pose to view its benefits, pressure points, and step-by-step instructions. <br>
+    These mudras are designed to naturally heal common ailments like stress, diabetes, back pain, and digestive issues.
+  </p>
+  <div class="row">
+  
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/gyan mudra.jpg" class="pose-image" alt="Gyan Mudra">
+      <div class="card-body">
+        <h5>🧠 Gyan Mudra</h5>
+        <p><strong>Benefit:</strong> Improves focus, memory & reduces anxiety</p>
+        <p><strong>How:</strong> Touch tip of index finger to tip of thumb. Extend other fingers.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/vayu mudra.jpg" class="pose-image" alt="Vayu Mudra" style="height: 220px; width: auto; object-fit: contain;">
+      <div class="card-body">
+        <h5>🌬️ Vayu Mudra</h5>
+        <p><strong>Benefit:</strong> Relieves gas, arthritis, joint pain</p>
+        <p><strong>How:</strong> Fold index finger to thumb base. Press thumb over it.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/varun mudra.jpg" class="pose-image" alt="Varun Mudra">
+      <div class="card-body">
+        <h5>💧 Varun Mudra</h5>
+        <p><strong>Benefit:</strong> Increases hydration, improves skin texture</p>
+        <p><strong>How:</strong> Touch tip of little finger to thumb tip. Keep other fingers relaxed.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/surya mudra.jpg" class="pose-image" alt="Surya Mudra">
+      <div class="card-body">
+        <h5>🔥 Surya Mudra</h5>
+        <p><strong>Benefit:</strong> Boosts metabolism and supports weight loss</p>
+        <p><strong>How:</strong> Bend ring finger to base of thumb and press lightly.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/prana mudra.jpg" class="pose-image" alt="Prana Mudra">
+      <div class="card-body">
+        <h5>🌿 Prana Mudra</h5>
+        <p><strong>Benefit:</strong> Increases vitality, reduces fatigue and enhances immunity</p>
+        <p><strong>How:</strong> Join tips of little & ring finger to thumb tip. Keep other fingers straight.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/apana mudra.jpg" class="pose-image" alt="Apana Mudra">
+      <div class="card-body">
+        <h5>🧹 Apana Mudra</h5>
+        <p><strong>Benefit:</strong> Detoxifies the body, good for digestion & menstruation</p>
+        <p><strong>How:</strong> Touch tip of thumb to middle and ring fingers.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/shunya mudra.jpg" class="pose-image" alt="Shunya Mudra">
+      <div class="card-body">
+        <h5>🔕 Shunya Mudra</h5>
+        <p><strong>Benefit:</strong> Helps with ear pain, vertigo & dullness</p>
+        <p><strong>How:</strong> Bend middle finger to thumb base and press gently.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/prithvi mudra.jpg" class="pose-image" alt="Prithvi Mudra">
+      <div class="card-body">
+        <h5>🌍 Prithvi Mudra</h5>
+        <p><strong>Benefit:</strong> Strengthens bones, improves stamina & skin health</p>
+        <p><strong>How:</strong> Touch tip of ring finger to thumb tip.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/agani mudra.jpg" class="pose-image" alt="Agni Mudra">
+      <div class="card-body">
+        <h5>🔥 Agni Mudra</h5>
+        <p><strong>Benefit:</strong> Improves digestion, controls cholesterol</p>
+        <p><strong>How:</strong> Fold ring finger to thumb base, press down with thumb.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/dhyana Mudra.jpg" class="pose-image" alt="Dhyana Mudra" style="height: 220px; width: auto; object-fit: contain;">
+      <div class="card-body">
+        <h5>🧘‍♀️ Dhyana Mudra</h5>
+        <p><strong>Benefit:</strong> Deepens meditation and inner awareness</p>
+        <p><strong>How:</strong> Place right hand over left, both palms upward, thumbs touching.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/apana vayu mudra.jpg" class="pose-image" alt="Apana Vayu Mudra">
+      <div class="card-body">
+        <h5>❤️ Apana Vayu Mudra</h5>
+        <p><strong>Benefit:</strong> Excellent for heart health and calming anxiety</p>
+        <p><strong>How:</strong> Join index finger to thumb; bend middle & ring fingers to touch thumb base.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-2">
+    <div class="card pose-card h-100 shadow-sm">
+      <img src="static/mudra/linga mudra.jpg" class="pose-image" alt="Ling Mudra">
+      <div class="card-body">
+        <h5>🌡️ Ling Mudra</h5>
+        <p><strong>Benefit:</strong> Generates internal heat, helpful for colds and asthma</p>
+        <p><strong>How:</strong> Interlock fingers, keep left thumb straight & upright.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<script>
+  function startListening() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) return alert("Speech recognition not supported in your browser.");
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.onresult = (e) => {
+      document.getElementById("diseaseInput").value = e.results[0][0].transcript;
+      document.getElementById("searchForm").submit();
+    };
+    recognition.start();
+  }
+</script>
+
+<footer>
+  &copy; 2025 Yoga Mudra Pose Prediction | Made with 🧘 + Sandhya
+</footer>
+</script>
+
+</body>
+</html>

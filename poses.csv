@@ -1,0 +1,46 @@
+Disease,Yoga Pose,Image Path,Pressure Points,Steps
+Asthma,Bhujangasana (Cobra Pose),images/Bhujangasana.jpeg,"Chest, wrist","1. Lie on your stomach. 2. Place hands under shoulders. 3. Inhale and lift the chest. 4. Hold, then exhale down."
+Diabetes,Ardha Matsyendrasana (Half Spinal Twist),images/Ardha Matsyendrasana.jpeg,"inner forearm, below knee","1. Sit with legs extended. 2. Bend right knee, place right foot outside left thigh. 3. Twist torso right. 4. Hold and repeat on the other side."
+High Blood Pressure,Shavasana (Corpse Pose),images/Shavasana.jpg,"base of skull, hand",1. Lie flat on back. 2. Relax body and breathe naturally. 3. Stay for 5–10 minutes.
+Constipation,Pawanmuktasana (Wind-Relieving Pose),images/Pavanamuktasana.png,"below navel, abdomen","1. Lie on back. 2. Inhale, bring knees to chest. 3. Hug knees and lift head. 4. Hold, release."
+Migraine,Balasana (Child's Pose),images/Balasana.jpg,Taiyang (temples),"1. Kneel down, sit on heels. 2. Bend forward, forehead to floor. 3. Extend arms forward or by side."
+Thyroid,Sarvangasana (Shoulder Stand),images/Sarvangasana.jpg,"base of throat, side of neck",1. Lie on back. 2. Lift legs and back to vertical. 3. Support back with hands. 4. Keep chin towards chest.
+Back Pain,Setu Bandhasana (Bridge Pose),images/Setu Bandhasana.png,"lower back, behind the knee","1. Lie on back, knees bent. 2. Feet flat, arms by side. 3. Inhale, lift hips up. 4. Hold and release."
+Obesity,Trikonasana (Triangle Pose),C:/User/images/Trikonasana.jpg,abdomen and inner leg,"1. Stand with legs apart. 2. Extend arms, bend sideways. 3. Touch ankle with one hand, other arm up. 4. Hold and repeat on other side."
+Depression,Ustrasana (Camel Pose),images/Ustrasana.jpeg,"wrist crease, top of head","1. Kneel with knees hip-width apart. 2. Place hands on heels. 3. Push hips forward, arch back. 4. Hold and release slowly."
+Insomnia,Viparita Karani (Legs-up-the-wall Pose),images/Viparita Karani.jpeg,"Yintang (between eyebrows), wrist",1. Lie on back near a wall. 2. Lift legs up against the wall. 3. Relax arms by side. 4. Stay 5–15 mins.
+Acidity,Vajrasana (Thunderbolt Pose),images/Vajrasana.png,"mid-abdomen, inner wrist","1. Kneel and sit on your heels. 2. Keep back straight, hands on thighs. 3. Breathe deeply for 5–10 mins."
+Anxiety,Sukhasana (Easy Pose),images/Sukhasana.jpg,"wrist crease, forehead","1. Sit cross-legged. 2. Keep spine straight. 3. Rest hands on knees, palms up. 4. Breathe slowly."
+Arthritis,Tadasana (Mountain Pose),images/Tadasana.jpeg,elbow and below knee,"1. Stand tall with feet together. 2. Arms by side. 3. Stretch arms overhead, lift heels. 4. Hold and relax."
+Bronchitis,Dhanurasana (Bow Pose),images/Dhanurasana.jpg,chest and elbow,"1. Lie on stomach. 2. Bend knees, hold ankles. 3. Inhale, lift chest and thighs. 4. Hold, release."
+Cervical Spondylosis,Matsyasana (Fish Pose),images/Matsyasana.jpeg,neck area,"1. Lie on back, legs extended. 2. Arch chest up, rest on head and elbows. 3. Breathe and hold."
+Cold & Cough,Halasana (Plow Pose),images/Halasana.png,hand and wrist,1. Lie on back. 2. Lift legs over head. 3. Touch floor with feet. 4. Support back if needed.
+Depression,Adho Mukha Svanasana (Downward Dog),images/Adho Mukha Svanasana.jpeg,head and hand,"1. Start on hands and knees. 2. Lift hips, straighten legs. 3. Head between arms. 4. Hold and breathe."
+Digestion Issues,Paschimottanasana (Seated Forward Bend),images/Paschimottanasana.jpg,below knee and abdomen,"1. Sit with legs extended. 2. Inhale, raise arms. 3. Exhale, reach for toes. 4. Hold, breathe."
+Eye Problems,Trataka (Candle Gazing),images/Trataka.jpeg,inner eye and base of skull,1. Sit in dark room. 2. Gaze at candle flame without blinking. 3. Focus for 5–10 mins.
+Fatty Liver,Naukasana (Boat Pose),images/Naukasana.jpeg,"foot, abdomen","1. Lie on back. 2. Inhale, lift legs, chest, and arms. 3. Hold like a boat. 4. Exhale and release."
+Frozen Shoulder,Gomukhasana (Cow Face Pose),images/Gomukhasana.jpeg,shoulder and scapula,"1. Sit with legs crossed. 2. One arm over shoulder, other behind. 3. Clasp hands behind back. 4. Switch sides."
+Gas Trouble,Ardha Pawanmuktasana,images/Ardha Pawanmuktasana.png,abdomen area,1. Lie on back. 2. Bring one knee to chest. 3. Hold for a few seconds. 4. Switch legs.
+Hair Loss,Uttanasana (Standing Forward Bend),images/Uttanasana.jpeg,scalp and wrist,"1. Stand, inhale arms up. 2. Exhale, fold forward from hips. 3. Relax head, stay 30 sec."
+Heart Disease,Anulom Vilom Pranayama,images/Anulom Vilom Pranayama.jpeg,wrist and chest,"1. Sit comfortably. 2. Close right nostril, inhale left. 3. Switch and exhale right. 4. Continue alternately."
+Hernia,Supta Baddha Konasana (Reclining Bound Angle),images/Supta Baddha Konasana.jpeg,abdomen and leg,"1. Lie on back. 2. Bend knees, soles touching. 3. Let knees fall to side. 4. Breathe deeply."
+Immunity Boost,Surya Namaskar (Sun Salutation),images/Surya Namaskar.jpeg,hand and leg,1. Perform 12 poses in sequence. 2. Inhale and exhale with each. 3. Repeat 3–5 rounds.
+Joint Pain,Vrikshasana (Tree Pose),images/Vrikshasana.jpeg,ankle and knee,1. Stand on one leg. 2. Place other foot on inner thigh. 3. Balance and bring palms together. 4. Switch legs.
+Kidney Stones,Uttanpadasana (Raised Leg Pose),images/Uttanpadasana.jpeg,lower back and abdomen,"1. Lie on back. 2. Inhale, raise legs to 45°. 3. Hold and breathe. 4. Exhale, lower slowly."
+Liver Disorder,Ardha Matsyendrasana,images/Ardha Matsyendrasana.jpeg,foot and abdomen,"1. Sit with legs stretched. 2. Bend right leg, place over left. 3. Twist torso right. 4. Hold and repeat."
+Menstrual Pain,Baddha Konasana (Butterfly Pose),images/Baddha Konasana.jpeg,leg and lower abdomen,"1. Sit, soles of feet together. 2. Hold feet, move knees up-down. 3. Lean forward gently."
+Menopause,Setu Bandhasana (Bridge Pose),images/Setu Bandhasana.png,leg and ankle,"1. Lie on back, bend knees. 2. Feet flat, arms by side. 3. Lift hips. 4. Hold and release."
+Neck Pain,Marjaryasana-Bitilasana (Cat-Cow),images/Marjaryasana-Bitilasana.jpeg,neck,"1. Start on hands and knees. 2. Inhale, arch back (Cow). 3. Exhale, round back (Cat). 4. Repeat."
+Obesity,Utkatasana (Chair Pose),images/Utkatasana.jpeg,abdomen and leg,"1. Stand, raise arms. 2. Bend knees like sitting. 3. Hold and breathe. 4. Release slowly."
+PCOD,Bhujangasana (Cobra Pose),images/Bhujangasana.jpg,abdomen and leg,"1. Lie on stomach. 2. Hands under shoulders. 3. Inhale, lift chest. 4. Hold and exhale."
+Piles,Malasana (Garland Pose),images/Malasana.jpeg,abdomen and calf,1. Squat with feet flat. 2. Join palms at chest. 3. Press elbows to knees. 4. Breathe deeply.
+Weight Loss,Surya Namaskar (Sun Salutation),images/Surya Namaskar.jpeg,Upper Lip,1. Perform 12 poses in sequence with breath control. 2. Repeat for 5–10 rounds.
+High Cholesterol,Ardha Halasana (Half Plow Pose),images/Ardha Halasana.jpeg,Liver point (right foot arch),1. Lie on back. 2. Raise legs to 90°. 3. Hold and breathe deeply.
+Sciatica,Supta Padangusthasana (Reclining Hand-to-Big-Toe Pose),images/Supta Padangusthasana.jpeg,near buttocks,1. Lie down. 2. Raise leg and hold big toe with hand.
+Sinusitis,Adho Mukha Svanasana (Downward Dog),images/Adho Mukha Svanasana.jpeg,beside nose nostrils,"1. Hands and feet on floor, hips up to form ‘V’ shape."
+Dark Circle,Trataka (Candle Gazing),images/Trataka.jpeg,Inner edge of the eyebrow,1. Sit in dark room. 2. Gaze at candle flame without blinking. 3. Focus for 5–10 mins.
+Jawline,Jivha Bandha,images/Jivha Bandha.jpeg,halfway between the corner of the mouth and the bottom of the earlobe,"1. Sit comfortably with your spine straight and eyes closed. 2. Press your tongue firmly against the roof of your mouth, reaching as far back as possible. 3. Slightly lift your chin to feel a stretch in your jaw and neck area. 4. Breathe slowly and deeply through your nose while holding the tongue lock. 5. Hold for 10–30 seconds, then release and relax the tongue. Repeat 3–5 times."
+Muscle Pain,Trikonasana (Triangle Pose),images/Trikonasana.jpg,In the hollow between the outer anklebone and the Achilles tendon.,"1. Stand with legs apart. 2. Extend arms, bend sideways. 3. Touch ankle with one hand, other arm up. 4. Hold and repeat on other side."
+Kidney Disorders,Ardha Matsyendrasana,images/Ardha Matsyendrasana.jpeg,no any,"1. Sit with legs stretched. 2. Bend right leg, place over left. 3. Twist torso right. 4. Hold and repeat."
+Finger Pain,Hasthamudras,images/Hasthamudras.jpg,Hasthamudras,1. Sit in a comfortable meditation posture. 2. Touch the tip of the index finger to the tip of the thumb. 3. Keep the other three fingers straight. 4. Rest hands on knees with palms facing upward.
+Headache,Balasana,images/Balasana.jpg,Between the thumb and index finger.,"1. Kneel down, sit on heels. 2. Bend forward, forehead to floor. 3. Extend arms forward or by side."
