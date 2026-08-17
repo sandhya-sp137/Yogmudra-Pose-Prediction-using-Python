@@ -443,7 +443,7 @@ GPU       : Optional, useful for faster model training
 ```
 ---
 
-# 👩‍💻 Project Team
+# 👩‍💻 Author
 
 **B.Tech – Artificial Intelligence & Data Science**
 
